@@ -1,0 +1,6 @@
+@section('meta_title')
+	Contemporary Blog Forum for Brilliant Minds...
+@endsection
+@section('meta_description')
+	Share Your Ideas on any Interesting or Developing issues that can educate and imporve our understanding...
+@endsection

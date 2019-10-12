@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=Exo|Exo+2:300,400,500,600,700,900|Ubuntu&display=swap');
+
+html, body {
+	background: #fff !important;
+}
+
+
+
+.navbar-nav > li > .dropdown-menu {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    display: block;
+    transform: scale(0);
+    transition: ease-out 0.3s;
+}
+.dropdown:hover .dropdown-menu {
+    transform: scale(1);
+}
+
+.blogHdTitle {
+  font-size: 2rem;
+  max-width: 950px;
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.jumbotron {
+	margin-top: -22px;
+  border-bottom: 1px solid #d3e0e9;
+  background: #00B4DB;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+	h2{
+		font-family: 'Exo', sans-serif;
+	}
+}
+
+
+.blogDivs{
+  margin-bottom: 50px;
+}
+
+.bookCards{
+  box-shadow: 3px 3px 5px 3px rgba(54,54,54,0.63);
+  -webkit-box-shadow: 3px 3px 5px 3px rgba(54,54,54,0.63);
+  -moz-box-shadow: 3px 3px 5px 3px rgba(54,54,54,0.63);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  height: 430px;
+  font-family: 'Exo', sans-serif;
+  text-align: justify;
+
+  .card-header, h2{
+  	background: transparent !important;
+  	text-align: center;
+  	margin-bottom: 3px;
+  	font-size: 1.2rem !important;
+  }
+  p{
+    padding: 4px;
+  }
+}
+
+
+.bookCards > a.ReadMore {
+	color: #274046;
+	font-family: 'Exo', sans-serif
+}
+
+.bookCards > a.ReadMore:hover{
+	color: #D7DDE8;
+	text-decoration: none;
+	font-weight: 900;
+}
+
+.bookCards > a.ReadMore:after{
+	content: " ...";
+	font-style: italic;
+}
+
+
+.badge-notification {
+  position: relative;
+  margin-right: 10px;
+}
+.badge-notification[data-badge]::after {
+  content: attr(data-badge);
+  position: absolute;
+  top: -11px;
+  right: -10px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 25px;
+  height: 25px;
+  line-height: 22px;
+  font-size: 8px;
+  font-weight: 600;
+  border-radius: 50%;
+  background: var(--secondary);
+  color: #fff;
+}
+span.badge-notification {
+  margin-right: 24px;
+}
+span.badge-notification[data-badge]::after {
+  top: -11px;
+  right: -22px;
+}
+
+
+
+/* --- disqus css -- */
+
+#disqus_thread {
+color: #900;
+border-style: 0px solid;
+border-color: #cccccc;
+padding: 5px;
+}
+
+#dsq-content #dsq-comments .dsq-comment-body {
+color: #fff;
+background-color: #000000;
+}
+
+.dsq-reaction-body {
+color: #fff;
+}
+
+.dsq-reaction-header cite, .dsq-reaction-header span {
+color: #ccc;
+}
+
+.dsq-reaction-retweets {
+color: #ccc;
+}
+
+/*--- end disqus css --*/
+
+
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(245, 246, 250,1.0);
+  font-family: 'Exo', sans-serif;
+  color: inherit;
+  text-align: center;
+
+}

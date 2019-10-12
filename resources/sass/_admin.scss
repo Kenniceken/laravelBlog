@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Exo|Exo+2:300,400,500,600,700,900|Ubuntu&display=swap');
+
+.adminText{
+	color: #434343;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: normal;
+
+	&:hover{
+		color: #fff;
+		text-decoration: none;
+	}
+}
+
+.adminBTN1 button:hover{	
+	a {
+		color: #fff !important;
+	}
+}

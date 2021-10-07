@@ -32,7 +32,8 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="position: relative; padding-left: 50px;">   
+                                <img src="/images/avatars/{{ Auth::user()->avatar }}" style="width: 32px; height: 32px; position: absolute; top: 10px; left: 10px; border-radius: 50%;" />                             
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -40,6 +41,9 @@
                                     @if(Auth::user() && Auth::user()->role_id === 1)
                                         <a class="dropdown-item" href="{{ route('dashboard') }}"> 
                                            <i class="fas fa-user"></i> Super Admin
+                                        </a>
+                                        <a class="dropdown-item" href="{{ route('users.profile') }}"> 
+                                           <i class="fas fa-user"></i> Profile
                                         </a>
                                         <a class="dropdown-item" href="{{ route('blogs') }}"> 
                                          <i class="fas fa-blog"></i> Blogs <span class="badge-notification mt-5" data-badge="{{ $blogs->count() }}"></span>
@@ -54,6 +58,9 @@
                                         <a class="dropdown-item" href="{{ route('dashboard') }}"> 
                                            <i class="fas fa-user"></i> Admin
                                         </a>    
+                                        <a class="dropdown-item" href="{{ route('users.profile') }}"> 
+                                           <i class="fas fa-user"></i> Profile
+                                        </a>
                                         <a class="dropdown-item" href="{{ route('blogs') }}"> 
                                          <i class="fas fa-blog"></i> Blogs <span class="badge-notification mt-5" data-badge="{{ $blogs->count() }}"></span>
                                         </a>
@@ -67,12 +74,18 @@
                                         <a class="dropdown-item" href="{{ route('dashboard') }}"> 
                                            <i class="fas fa-user"></i> Author
                                         </a>
+                                        <a class="dropdown-item" href="{{ route('users.profile') }}"> 
+                                           <i class="fas fa-user"></i> Profile
+                                        </a>
                                         <a class="dropdown-item" href="{{ route('blogs') }}"> 
                                          <i class="fas fa-blog"></i> Blogs 
                                         </a>
                                         @elseif(Auth::user() && Auth::user()->role_id === 4)
                                         <a class="dropdown-item" href="{{ route('dashboard') }}"> 
                                             <i class="fas fa-user"></i> {{ Auth::user()->role->name }} 
+                                        </a>
+                                        <a class="dropdown-item" href="{{ route('users.profile') }}"> 
+                                           <i class="fas fa-user"></i> Profile
                                         </a>
                                         <a class="dropdown-item" href="{{ route('blogs') }}"> 
                                          <i class="fas fa-blog"></i> Blogs 
@@ -89,7 +102,6 @@
                                                      document.getElementById('logout-form').submit();">
                                      <i class="fas fa-sign-out-alt"></i>   {{ __('Logout') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>

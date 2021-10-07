@@ -30,6 +30,5 @@
         @include('includes.footer')
         </footer>      
     </div>
-   <!--  <script id="dsq-count-scr" src="//obiomablog.disqus.com/count.js" async></script> -->
 </body>
 </html>

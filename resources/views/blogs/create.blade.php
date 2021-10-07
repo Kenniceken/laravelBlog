@@ -9,7 +9,6 @@
     <div class="row justify-content-center">
         <div class="col-md-6 mx-auto">
            <form action="{{ route('blogs.store') }}" method="post" enctype="multipart/form-data" class="leave-comment">
-
             @include('partials.error-message')
            
               <h4 class="m-text26 p-b-36 p-t-15">
@@ -32,7 +31,7 @@
                   <div class="form-group">
                     <span class="btn btn-outline-secondary btn-file rounded-0 btn-sm">
                     Blog Featured Image <input type="file" name="featured_image">
-                </span>
+                  </span>
                   </div><!--            
                   <textarea class="dis-block s-text7 size20 bo4 p-l-22 p-r-22 p-t-13 m-b-20" name="body" placeholder="Enter Blog Content">                    
                   </textarea> -->

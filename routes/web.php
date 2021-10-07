@@ -32,7 +32,8 @@ Route::resource('categories', 'CategoryController');
 
 // Users route resource
 Route::resource('users', 'UserController');
-
+Route::get('profile', 'UserController@profile')->name('users.profile');
+Route::post('profile', 'UserController@update_avatar')->name('update.avatar');
 
 // Contact Us Form
 Route::get('contact', 'MailController@contact')->name('contact');

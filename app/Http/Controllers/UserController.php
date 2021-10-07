@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 use App\Category;
+use Image;
+
+
 class UserController extends Controller
 {
 
@@ -97,5 +101,31 @@ class UserController extends Controller
         //
         $user->delete();
         return back();
+    }
+
+    public function profile()
+    {
+        $categories = Category::latest()->get();
+        $user = Auth::user();
+        //return view('users.profile', compact(['user', 'categories']));
+        return view('users.profile', compact(['user', 'categories']));
+    }
+
+    public function update_avatar(Request $request)
+    {
+
+        $categories = Category::latest()->get();
+
+        // Handle the user upload for avatar update
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('avatar');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300, 300)->save(public_path('/images/avatars/' . $filename));
+
+            $user = Auth::user();
+            $user->avatar = $filename;
+            $user->save();
+        }
+        return view('profile', compact(['user', 'categories']));
     }
 }

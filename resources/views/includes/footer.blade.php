@@ -6,7 +6,8 @@
 	<div class="t-center p-l-15 p-r-15">
 		<div class="t-center s-text8 p-t-20">
 			<div class="float-left">
-				Copyright © 2021 LaraBlog.
+				Copyright © <?php echo date("Y"); ?> LaraBlog.
+				
 			</div>
 			<div class="float-right">
 				<a href="{{ route('contact') }}"> Contact Us</a>
